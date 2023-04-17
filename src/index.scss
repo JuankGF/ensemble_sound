@@ -1,0 +1,29 @@
+$primary_color: #573065;
+$secondary_color: #8f66a4;
+$secondary_color_light: #904bb6;
+
+$theme-colors: (
+  "primary": $primary_color,
+  "secondary": $secondary_color,
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  margin: 0;
+  font-family: "Markazi Text", "Karla", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  position: relative;
+  height: 100vmin;
+}

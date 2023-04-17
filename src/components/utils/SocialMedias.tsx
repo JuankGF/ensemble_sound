@@ -1,0 +1,36 @@
+import { IconProp, SizeProp } from "@fortawesome/fontawesome-svg-core";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+type SocialMediasProps = {
+  iconSize?: SizeProp;
+};
+
+export default function SocialMedias({ iconSize = "2x" }: SocialMediasProps) {
+  return (
+    <>
+      <a
+        target="_blank"
+        href="https://www.facebook.com/profile.php?id=100089345024781"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon
+          icon={faFacebook as IconProp}
+          size={iconSize}
+          className="text-primary cursor-pointer"
+        />
+      </a>
+      <a
+        target="_blank"
+        href="https://www.instagram.com/ensemblesoundinc/?fbclid=IwAR1PB-AUGV0roGnMtixYL1LGY9Cdxr8Ebuvamh04G0P_Nj3LL214BnSNsEU"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon
+          icon={faInstagram as IconProp}
+          size={iconSize}
+          className="text-primary cursor-pointer mx-1"
+        />
+      </a>
+    </>
+  );
+}
