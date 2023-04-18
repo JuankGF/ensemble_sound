@@ -2,9 +2,11 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Hero from "../utils/Hero";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 export default function About() {
   const navigate = useNavigate();
+  const { isSmallScreen } = useWindowSize();
 
   return (
     <Hero
@@ -26,6 +28,13 @@ export default function About() {
           alt="restaurant-hero-2"
           className="shadow-md rounded-sm on-top banner-img"
         />
+        {!isSmallScreen && (
+          <img
+            src={require("../../assets/session3.jpg")}
+            alt="restaurant-hero-3"
+            className="shadow-md rounded-sm on-right banner-img"
+          />
+        )}
       </Container>
     </Hero>
   );

@@ -137,13 +137,19 @@ nav {
 }
 .on-top {
   position: absolute;
-  left: 8rem;
+  left: 50%;
   top: 10px;
+  z-index: 999;
 }
 .on-bottom {
   position: absolute;
-  left: 0.5rem;
+  left: 1.5rem;
   top: 3rem;
+}
+.on-right {
+  position: absolute;
+  right: 5rem;
+  top: 2rem;
 }
 
 .text-shadow-sm {
