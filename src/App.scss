@@ -98,6 +98,7 @@ nav {
 
 .section {
   min-width: 100%;
+  padding-inline: 1rem;
 }
 
 .bg-primary {
@@ -178,6 +179,15 @@ nav {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.social-media-link {
+  &:last-of-type {
+    margin-right: 1rem;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 480px) {
