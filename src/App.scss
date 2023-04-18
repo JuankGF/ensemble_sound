@@ -58,6 +58,10 @@ nav {
     &.text-sm {
       font-size: small;
     }
+    &.active {
+      color: base_styles.$secondary_color_light;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -94,6 +98,7 @@ nav {
 
 .section {
   min-width: 100%;
+  padding-block: 1rem;
 }
 
 .bg-primary {
@@ -174,6 +179,27 @@ nav {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.social-media-link {
+  &:hover > svg {
+    color: base_styles.$secondary_color_light !important;
+  }
+  &:last-of-type {
+    margin-right: 1rem;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.select-all-text {
+  user-select: all;
+  -moz-user-select: all;
+  -webkit-user-select: all;
+  & a {
+    color: base_styles.$secondary_color;
+  }
 }
 
 @media (max-width: 480px) {

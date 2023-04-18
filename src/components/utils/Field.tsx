@@ -66,7 +66,7 @@ export default function Field({
   onChange,
 }: FieldProps) {
   return (
-    <Form.Group as={Row} className={className} controlId={controlId ?? field}>
+    <Form.Group as={Row} className={className}>
       {type === "radio" || type === "checkbox" || type === "switch" ? (
         <Form.Check
           type={type}

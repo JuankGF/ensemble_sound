@@ -5,7 +5,7 @@ import SuccessFrame from "../utils/SuccessFrame";
 export default function BookSucces() {
   return (
     <SuccessFrame
-      message="We got your reservation. See you soon!"
+      message="We got your request. We will contact you soon!"
       icon={faBookBookmark}
     />
   );

@@ -36,13 +36,24 @@ export default function Footer() {
             <Col xs={6} md="auto">
               <h6 className="text-primary">Contact</h6>
               <p className="text-muted">
-                <small>901 SW 15th TER, Cape Coral FL</small>
+                Address:{" "}
+                <small className="select-all-text">
+                  901 SW 15th TER, Cape Coral FL
+                </small>
               </p>
               <p className="text-muted">
-                <small>+1 305 609 6067</small>
+                Phone:{" "}
+                <small className="select-all-text">
+                  <a href="tel:1305-609-6067">+1 305 609 6067</a>
+                </small>
               </p>
               <p className="text-muted">
-                <small>eddyensemble@gmail.com</small>
+                Email:{" "}
+                <small className="select-all-text">
+                  <a href="mailto:eddyensemble@gmail.com">
+                    eddyensemble@gmail.com
+                  </a>
+                </small>
               </p>
             </Col>
             <Col xs={6} md="auto">
