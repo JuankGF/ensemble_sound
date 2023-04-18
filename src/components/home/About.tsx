@@ -11,7 +11,7 @@ export default function About() {
       id="about"
       text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit."
-      className="mb-3"
+      className="section mb-5"
       button_action={() => navigate("/reservations")}
     >
       <Container className="position-relative">
