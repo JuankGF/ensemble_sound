@@ -49,9 +49,16 @@ export default function Services() {
             </Badge>
           ))}
         </div>
-        <h6 className="text-muted text-center text-sm">
+        <h6 className="text-muted text-center">
           Select one of the services above and you are on your way to success!{" "}
         </h6>
+        <small className="text-muted text-sm text-center">
+          Prices below are estimated and can change according some factors.
+          Contact us for more info{" "}
+          <a href="tel:1305-609-6067" className="text-secondary">
+            +1305-609-6067
+          </a>
+        </small>
       </Row>
       <Row className="mt-3 border-top mx-5 py-2 g-3 pb-5">
         {serviceList.map((service) => {
@@ -67,6 +74,7 @@ export default function Services() {
                   name={service.name}
                   description={service.description}
                   price={service.price}
+                  estimated_duration={service.estimated_duration}
                   layoutHorizontal
                   addToCart={() =>
                     cart?.addToCart({
