@@ -56,7 +56,7 @@ const serviceList = [
     price: 12.99,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
-    categories: ["salads"],
+    categories: ["live-event"],
   },
   {
     id: "5",
@@ -65,7 +65,7 @@ const serviceList = [
     price: 18.99,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
-    categories: ["mains", "lunch"],
+    categories: ["rental"],
   },
   {
     id: "3",
@@ -74,7 +74,7 @@ const serviceList = [
     price: 5.0,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
-    categories: ["desserts"],
+    categories: ["studio"],
   },
   {
     id: "4",
@@ -83,7 +83,7 @@ const serviceList = [
     price: 20.0,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
-    categories: ["mains", "specials", "lunch"],
+    categories: ["studio"],
   },
   {
     id: "2",
@@ -92,7 +92,7 @@ const serviceList = [
     price: 5.99,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
-    categories: ["mains", "specials"],
+    categories: ["sound-test", "live-event"],
   },
   {
     id: "6",
@@ -101,7 +101,7 @@ const serviceList = [
     price: 3.99,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
-    categories: ["specials"],
+    categories: ["live-event"],
   },
 ] as Event[];
 

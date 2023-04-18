@@ -7,7 +7,7 @@ import ServiceCard from "../home/ServiceCard";
 import { CartContext } from "../../context/CartContext";
 import { UserContext } from "../../context/UserContext";
 
-const filters = ["lunch", "mains", "desserts", "specials", "salads"];
+const filters = ["studio", "live-event", "sound-test", "rental"];
 const hasCategory = (filters: string[], itemCategories: string[]) => {
   let hasCategory = false;
   for (let index = 0; index < itemCategories.length && !hasCategory; index++) {
