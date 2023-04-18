@@ -11,19 +11,25 @@ export default function Footer() {
   return (
     <footer className="pt-3 px-5 d-flex align-items-center">
       <Row className="g-3 w-100">
-        <Col xs={5} md={4} className="position-relative m-auto">
-          <Image
-            src={logo}
-            width="100rem"
-            className="shadow-sm object-fit-cover"
-            title="©EnsembleSound"
-            alt="©EnsembleSound"
-          />
-          <div className="text-muted">©EnsembleSound 2023</div>
+        <Col
+          xs={5}
+          md={4}
+          className={`position-relative m-auto ${isMobile ? "order-2" : ""}`}
+        >
+          {!isMobile && (
+            <Image
+              src={logo}
+              width="100rem"
+              className="shadow-sm object-fit-cover"
+              title="©EnsembleSound"
+              alt="©EnsembleSound"
+            />
+          )}
+          <div className="text-muted nowrap">©EnsembleSound 2023</div>
         </Col>
 
-        <Col>
-          <Row className="px-3 g-3 w-100">
+        <Col className={isMobile ? "order-1" : ""}>
+          <Row className="px-3 w-100">
             {!isMobile && (
               <Col as="nav">
                 <h6 className="text-primary">Navigation</h6>
@@ -33,7 +39,7 @@ export default function Footer() {
                 />
               </Col>
             )}
-            <Col xs={6} md="auto">
+            <Col xs={12} md="auto">
               <h6 className="text-primary">Contact</h6>
               <p className="text-muted">
                 Address:{" "}
@@ -56,9 +62,13 @@ export default function Footer() {
                 </small>
               </p>
             </Col>
-            <Col xs={6} md="auto">
+            <Col xs={12} md="auto">
               <h6 className="text-primary">Social Media Links</h6>
-              <div className="d-flex w-100 g-3 align-items-center justify-content-center">
+              <div
+                className={`d-flex w-100 g-3 align-items-center ${
+                  isMobile ? "justify-content-start" : "justify-content-center"
+                }`}
+              >
                 <SocialMedias />
               </div>
             </Col>
