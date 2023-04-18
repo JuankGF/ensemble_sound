@@ -6,6 +6,7 @@ import { Button } from "react-bootstrap";
 
 type HeroProps = {
   text: string;
+  title_class?: string;
   text_class?: string;
   button_variant?: "primary" | "secondary";
   className?: string;
@@ -18,6 +19,7 @@ export default function Hero({
   id,
   children,
   className,
+  title_class = "text-white",
   text_class,
   button_variant = "primary",
   text = "We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist",
@@ -28,7 +30,7 @@ export default function Hero({
     <Container id={id} className={`hero ${className ?? ""}`}>
       <Row style={{ padding: "2em" }}>
         <Col>
-          <h2 className="text-white">Ensemble Sound</h2>
+          <h2 className={title_class}>Ensemble Sound</h2>
           <h4 className={`text-shadow-sm ${text_class}`}>Professional Audio</h4>
           <p className={text_class}>{text}</p>
           <Button
