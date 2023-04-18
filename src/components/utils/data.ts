@@ -17,6 +17,7 @@ export type Event = {
   image: string;
   name: string;
   description: string;
+  estimated_duration: number; //in minutes
   date?: Interval;
   price?: number;
   categories?: string[];
@@ -24,27 +25,16 @@ export type Event = {
 
 const defBookingTimes = [
   "11:00 AM",
-  "11:30 AM",
   "12:00 PM",
-  "12:30 PM",
   "13:00 PM",
-  "13:30 PM",
   "14:00 PM",
-  "14:30 PM",
   "15:00 PM",
-  "15:30 PM",
   "16:00 PM",
-  "16:30 PM",
   "17:00 PM",
-  "17:30 PM",
   "18:00 PM",
-  "18:30 PM",
   "19:00 PM",
-  "19:30 PM",
   "20:00 PM",
-  "20:30 PM",
   "21:00 PM",
-  "21:30 PM",
   "22:00 PM",
 ];
 
@@ -57,6 +47,7 @@ const serviceList = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
     categories: ["live-event"],
+    estimated_duration: 180,
   },
   {
     id: "5",
@@ -66,6 +57,7 @@ const serviceList = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
     categories: ["rental"],
+    estimated_duration: 120,
   },
   {
     id: "3",
@@ -75,6 +67,7 @@ const serviceList = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
     categories: ["studio"],
+    estimated_duration: 240,
   },
   {
     id: "4",
@@ -84,6 +77,7 @@ const serviceList = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
     categories: ["studio"],
+    estimated_duration: 330,
   },
   {
     id: "2",
@@ -93,6 +87,7 @@ const serviceList = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
     categories: ["sound-test", "live-event"],
+    estimated_duration: 120,
   },
   {
     id: "6",
@@ -102,6 +97,7 @@ const serviceList = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
     categories: ["live-event"],
+    estimated_duration: 180,
   },
 ] as Event[];
 

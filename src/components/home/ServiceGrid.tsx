@@ -26,6 +26,7 @@ export default function ServiceGrid() {
               image={service.image}
               name={service.name}
               description={service.description}
+              estimated_duration={service.estimated_duration}
               actionLabel="Book session"
               actionIcon={faBookmark}
             />
