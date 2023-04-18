@@ -58,6 +58,10 @@ nav {
     &.text-sm {
       font-size: small;
     }
+    &.active {
+      color: base_styles.$secondary_color_light;
+      text-decoration: underline;
+    }
   }
 }
 
