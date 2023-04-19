@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Col, Container, Row } from "react-bootstrap";
-import { findDish } from "../utils/data";
+import { findService } from "../utils/data";
 
 export default function Cart() {
   const orders = useContext(CartContext);
@@ -19,7 +19,7 @@ export default function Cart() {
         <h5>Order Summary</h5>
         <Row className="px-3 py-1 bg-slate">Items</Row>
         {orders?.cartItems.map((order) => {
-          const dish = findDish(order.serviceId);
+          const dish = findService(order.serviceId);
           return (
             <Row
               key={`${order.serviceId}-${order.customerId}`}
