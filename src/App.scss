@@ -109,6 +109,10 @@ nav {
   background-color: base_styles.$secondary_color_light;
 }
 
+.rounded-xs {
+  border-radius: 0.25rem;
+}
+
 .rounded-sm {
   border-radius: 0.75rem;
 }
