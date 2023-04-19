@@ -60,7 +60,7 @@ export default function Services() {
           </a>
         </small>
       </Row>
-      <Row className="mt-3 border-top mx-5 py-2 g-3 pb-5">
+      <Row className="mt-3 border-top mx-2 py-2 g-3 pb-5">
         {serviceList.map((service) => {
           const shouldRender =
             activeFilters.length === 0 ||
