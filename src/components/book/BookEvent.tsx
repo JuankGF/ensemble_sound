@@ -6,10 +6,10 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 import Hero from "../utils/Hero";
 import ImageCarousel from "../utils/ImageCarousel";
 import BookingForm from "./BookingForm";
-import bg1 from "../../assets/ensemble_bg.jpg";
-import bg2 from "../../assets/ensemble_bg2.jpg";
-import bg3 from "../../assets/ensemble_bg3.jpg";
-import bg4 from "../../assets/ensemble_bg4.jpg";
+import bg1 from "../../assets/images/ensemble_bg.jpg";
+import bg2 from "../../assets/images/ensemble_bg2.jpg";
+import bg3 from "../../assets/images/ensemble_bg3.jpg";
+import bg4 from "../../assets/images/ensemble_bg4.jpg";
 
 export default function BookEvent() {
   const { isMobile } = useWindowSize();

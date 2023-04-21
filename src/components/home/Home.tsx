@@ -4,6 +4,7 @@ import About from "./About";
 import ServiceGrid from "./ServiceGrid";
 import Testimonials from "./Testimonials";
 import HeroSection from "../utils/HeroSection";
+import TechRider from "./TechRider";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ServiceGrid />
       <Testimonials />
       <About />
+      <TechRider />
     </>
   );
 }

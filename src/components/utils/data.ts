@@ -1,8 +1,8 @@
-import p1 from "../../assets/service.jpeg";
-import p2 from "../../assets/service2.jpeg";
-import p3 from "../../assets/service3.jpg";
-import p4 from "../../assets/service4.jpeg";
-import p5 from "../../assets/service5.jpeg";
+import p1 from "../../assets/images/service.jpeg";
+import p2 from "../../assets/images/service2.jpeg";
+import p3 from "../../assets/images/service3.jpg";
+import p4 from "../../assets/images/service4.jpeg";
+import p5 from "../../assets/images/service5.jpeg";
 
 export type Testimonial = {
   author: string;
@@ -21,6 +21,27 @@ export type Event = {
   price?: number;
   categories?: string[];
 };
+
+export type Equipment = {
+  type: EquipmentType;
+  image: string;
+  id: string;
+  name: string;
+  description?: string;
+  dimension?: string;
+  weight?: number;
+  quantity: number;
+};
+
+export type EquipmentType =
+  | "mixers"
+  | "microphones"
+  | "sub"
+  | "speakers"
+  | "monitors"
+  | "stage-boxes"
+  | "direct-input"
+  | "instruments";
 
 const defBookingTimes = [
   "11:00 AM",
@@ -140,7 +161,155 @@ const testimonials = [
   },
 ] as Testimonial[];
 
-const findDish = (dishId: string) =>
-  serviceList.find((dish) => dish.id === dishId);
+const findService = (serviceId: string) =>
+  serviceList.find((service) => service.id === serviceId);
 
-export { serviceList, testimonials, defBookingTimes, findDish };
+const techRider: Equipment[] = [
+  {
+    id: "16",
+    image: "",
+    name: "PROD2",
+    quantity: 1,
+    type: "direct-input",
+    description: "Radial 1CH Passive Inst D.I",
+  },
+  {
+    id: "17",
+    image: "",
+    name: "PROD1",
+    quantity: 1,
+    type: "direct-input",
+    description: "Radial 2CH Passive Inst D.I",
+  },
+  {
+    id: "18",
+    image: "",
+    name: "IMP2",
+    quantity: 1,
+    type: "direct-input",
+    description: "WirlWind 1CH Passive Inst D.I",
+  },
+  {
+    id: "7",
+    image: "",
+    name: "SHURE PSM300",
+    quantity: 8,
+    type: "monitors",
+    description: "In Ear Monitor System Wireless",
+  },
+  {
+    id: "8",
+    image: "",
+    name: "DONER EM1",
+    quantity: 2,
+    type: "monitors",
+    description: "In Ear Monitor System Wired",
+  },
+  {
+    id: "9",
+    image: "",
+    name: "SHURE SLX4",
+    quantity: 4,
+    type: "microphones",
+    description: "SM58BETA SLX4 Wireless Mic",
+  },
+  {
+    id: "10",
+    image: "",
+    name: "E604",
+    quantity: 4,
+    type: "microphones",
+    description: "Sennheiser Clip-On Snare-Tom Mic",
+  },
+  {
+    id: "11",
+    image: "",
+    name: "SHURE SM81",
+    quantity: 3,
+    type: "microphones",
+    description: "Shure Cardioid 48V Inst Mic",
+  },
+  {
+    id: "12",
+    image: "",
+    name: "SHURE BETA52",
+    quantity: 1,
+    type: "microphones",
+    description: "Shure Super Din Kick Drum Mic",
+  },
+  {
+    id: "13",
+    image: "",
+    name: "SHURE SM58",
+    quantity: 3,
+    type: "microphones",
+    description: "Shure Dynamic Vocal Mic",
+  },
+  {
+    id: "14",
+    image: "",
+    name: "SHURE SM57",
+    quantity: 3,
+    type: "microphones",
+    description: "Shure Dynamic Inst Mic",
+  },
+  {
+    id: "15",
+    image: "",
+    name: "TGD57C",
+    quantity: 3,
+    type: "microphones",
+    description: "Beyerdinamic Clip GooseNeck Mic",
+  },
+  {
+    id: "4",
+    image: "",
+    name: "JBLPRX812W",
+    quantity: 4,
+    type: "monitors",
+    description: "Powered Speaker Monitor",
+  },
+  {
+    id: "5",
+    image: "",
+    name: "M32LIVE MIDAS",
+    quantity: 1,
+    type: "mixers",
+    description: "40-CH M Series Digital Mixer",
+  },
+  {
+    id: "1",
+    image: "",
+    name: "JBLSRX906LA",
+    quantity: 4,
+    type: "speakers",
+    description: "Powered Array Speaker",
+  },
+  {
+    id: "2",
+    image: "",
+    name: "JBLSRX918S",
+    quantity: 2,
+    type: "sub",
+    description: "Powered Sub",
+  },
+  {
+    id: "3",
+    image: "",
+    name: "JBLPRX818XLFW",
+    quantity: 2,
+    type: "sub",
+    description: "Powered Sub",
+  },
+
+  {
+    id: "6",
+    image: "",
+    name: "MDL32",
+    quantity: 1,
+    type: "stage-boxes",
+    description: "MIDAS DL-32 32in/16out Stage Box",
+  },
+];
+
+export { serviceList, testimonials, defBookingTimes, findService, techRider };
