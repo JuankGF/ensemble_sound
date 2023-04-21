@@ -40,7 +40,7 @@ export default function BookingForm() {
         setTimeout(() => {
           console.log(JSON.stringify(values, null, 2));
           setSubmitting(false);
-          navigate("/book_online/book-success");
+          navigate("/book_online/book_success");
         }, 400);
       }}
     >
