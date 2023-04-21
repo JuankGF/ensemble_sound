@@ -84,6 +84,18 @@ nav {
       transform: scale(1);
     }
   }
+  .footer-nav {
+    .app-link {
+      &.active,
+      &:hover {
+        text-decoration: underline;
+        color: base_styles.$secondary_color_light !important;
+      }
+      &::after {
+        width: 0px;
+      }
+    }
+  }
 }
 
 .text-xs {
