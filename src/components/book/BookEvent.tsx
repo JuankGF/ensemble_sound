@@ -22,7 +22,7 @@ export default function BookEvent() {
         className="bg-primary section"
         button_variant="secondary"
         text_class="text-white"
-        button_label="Online Booking"
+        button_label="Service Booking"
         button_action={() => navigate("/services")}
       >
         {!isMobile && <ImageCarousel image_sources={[bg1, bg2, bg3, bg4]} />}

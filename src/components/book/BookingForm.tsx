@@ -12,14 +12,10 @@ const BookingSchema = Yup.object().shape({
   phone: Yup.string().optional(),
   booking_date: Yup.string().required(),
   arrival_time: Yup.string().required(),
-  dinners: Yup.number()
-    .required()
-    .min(1)
-    .max(80, "Sorry, 80 is our full capacity."),
-  occasion: Yup.string()
+  type: Yup.string()
     .optional()
-    .oneOf(["anniversary", "birthday", "engagement"]),
-  restaurant_area: Yup.string().required().oneOf(["inside", "outside"]),
+    .oneOf(["anniversary", "birthday", "engagement", "concert"]),
+  description: Yup.string().required(),
 });
 
 const initialValues = {
@@ -28,9 +24,8 @@ const initialValues = {
   phone: "",
   booking_date: "",
   arrival_time: "",
-  dinners: 1,
-  occasion: "",
-  restaurant_area: "outside",
+  type: "",
+  description: "",
 };
 
 export default function BookingForm() {
@@ -128,58 +123,36 @@ export default function BookingForm() {
             }
           />
           <Field
-            type="number"
-            placeholder="Enter number of dinners"
-            field="dinners"
-            label="Number of dinners"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.dinners}
-            className="mb-3"
-            error={errors.dinners}
-            touched={touched.dinners}
-            required
-          />
-          <Field
             type="select"
-            placeholder="Enter occasion"
-            field="occasion"
-            label="Occasion"
+            placeholder="Enter event type"
+            field="type"
+            label="Event type"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.occasion}
+            value={values.type}
             className="mb-3"
-            error={errors.occasion}
-            touched={touched.occasion}
+            error={errors.type}
+            touched={touched.type}
             options={[
               { name: "Occasion", value: "" },
               { name: "Anniversary", value: "anniversary" },
               { name: "Birthday", value: "birthday" },
               { name: "Engagement", value: "engagement" },
+              { name: "Concert", value: "concert" },
             ]}
           />
-          <Form.Group controlId="restaurant_area">
-            <Form.Check
-              label="Outside"
-              name="restaurant_area"
-              type="radio"
-              id="outside"
-              value="outside"
-              defaultChecked={values.restaurant_area === "outside"}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            <Form.Check
-              label="Inside"
-              name="restaurant_area"
-              type="radio"
-              id="inside"
-              value="inside"
-              defaultChecked={values.restaurant_area === "inside"}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-          </Form.Group>
+          <Field
+            as="textarea"
+            placeholder="Enter description"
+            field="description"
+            label="Description"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.description}
+            className="mb-3"
+            error={errors.description}
+            touched={touched.description}
+          />
 
           <Button
             type="submit"
