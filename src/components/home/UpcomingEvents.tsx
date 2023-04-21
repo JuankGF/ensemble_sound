@@ -49,7 +49,7 @@ export default function UpcomingEvents() {
                     {location}
                   </Col>
                   <Col
-                    xs={5}
+                    xs={3}
                     lg={3}
                     className={!isMobile ? "d-flex justify-content-end" : ""}
                   >
@@ -58,7 +58,7 @@ export default function UpcomingEvents() {
                       options={[
                         "Apple",
                         "Google",
-                        "iCal",
+                        /* "iCal", */
                         "Microsoft365",
                         "MicrosoftTeams",
                         "Outlook.com",
@@ -72,6 +72,7 @@ export default function UpcomingEvents() {
                       timeZone="America/New_York"
                       organizer="EduardoPerez|eddyensemble@gmail.com"
                       hideTextLabelButton={isMobile}
+                      listStyle={isMobile ? "modal" : "dropdown"}
                       hideCheckmark
                       label="Add to Calendar"
                       styleLight="--btn-background: #573065; --btn-text: #fff; --font: sans-serif;"
