@@ -33,6 +33,7 @@ export type FieldProps = {
   placeholder?: string;
   className?: string;
   controlId?: string;
+  as?: "input" | "textarea";
   onChange: (e: React.ChangeEvent<any>) => void;
   onBlur: (e: React.FocusEvent<any, Element>) => void;
   error?: string;
@@ -57,11 +58,11 @@ export default function Field({
   value,
   placeholder,
   className,
-  controlId,
   disabled,
   options,
   min,
   max,
+  as = "input",
   onBlur,
   onChange,
 }: FieldProps) {
@@ -115,7 +116,7 @@ export default function Field({
               )
             )}
           </Form.Select>
-        ) : (
+        ) : type === "number" ? (
           <Form.Control
             type={type}
             placeholder={placeholder}
@@ -125,11 +126,25 @@ export default function Field({
             value={value}
             disabled={disabled}
             isInvalid={error !== undefined && error !== ""}
+            id={field}
             min={min}
             max={max}
+          />
+        ) : (
+          <Form.Control
+            type={type}
+            as={as}
+            placeholder={placeholder}
+            name={field}
+            onChange={onChange}
+            onBlur={onBlur}
+            value={value}
+            disabled={disabled}
+            isInvalid={error !== undefined && error !== ""}
             id={field}
           />
         )}
+
         {type === "range" && (
           <Form.Range
             placeholder={placeholder}
