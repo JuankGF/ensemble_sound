@@ -9,6 +9,14 @@ import Navbar from "./Navbar";
 import SocialMedias from "./SocialMedias";
 import SuccessFrame from "./SuccessFrame";
 
+const getImage = (name: string, fileExt: string = "png") => {
+  try {
+    return require(`../../assets/images/${name}.${fileExt}`);
+  } catch (error) {
+    return undefined;
+  }
+};
+
 export {
   ErrorPage,
   Field,
@@ -20,4 +28,5 @@ export {
   Navbar,
   SocialMedias,
   SuccessFrame,
+  getImage,
 };
