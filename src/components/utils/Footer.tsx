@@ -9,9 +9,9 @@ import SocialMedias from "./SocialMedias";
 export default function Footer() {
   const { isMobile } = useWindowSize();
   return (
-    <footer className="pt-3 px-5 py-2 d-flex align-items-center">
-      <Row className="px-3 w-100 justify-content-center">
-        <Col xs={12} sm="auto" className="my-auto px-5">
+    <footer className="pt-3 px-5 d-flex align-items-center">
+      <Row className="g-3 w-100">
+        <Col xs={12} md={4} className="position-relative text-center">
           {!isMobile && (
             <Image
               src={logo}
@@ -21,7 +21,7 @@ export default function Footer() {
               alt="©EnsembleSound"
             />
           )}
-          <div className="text-muted nowrap">©EnsembleSound 2023</div>
+          <div className="text-muted text-nowrap">©EnsembleSound 2023</div>
         </Col>
         {!isMobile && (
           <Col as="nav" md="auto">

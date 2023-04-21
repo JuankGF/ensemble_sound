@@ -8,6 +8,7 @@ type HeroProps = {
   text: string;
   title_class?: string;
   text_class?: string;
+  title_class?: string;
   button_variant?: "primary" | "secondary";
   className?: string;
   id?: string;
@@ -21,6 +22,7 @@ export default function Hero({
   className,
   title_class = "text-white",
   text_class,
+  title_class = "text-white",
   button_variant = "primary",
   text = "We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist",
   button_label = "Book a Session",

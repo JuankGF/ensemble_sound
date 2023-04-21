@@ -3,14 +3,14 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
-import { Event } from "../utils/data";
+import { Service } from "../utils/data";
 
 type DishCardProps = {
   actionLabel?: string;
   actionIcon?: IconDefinition;
   layoutHorizontal?: boolean;
   addToCart?: () => void;
-} & Event;
+} & Service;
 
 export default function ServiceCard({
   id,

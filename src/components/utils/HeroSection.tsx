@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import Hero from "./Hero";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import ImageCarousel from "./ImageCarousel";
-import bg1 from "../../assets/ensemble_bg.jpg";
-import bg2 from "../../assets/ensemble_bg2.jpg";
-import bg3 from "../../assets/ensemble_bg3.jpg";
-import bg4 from "../../assets/ensemble_bg4.jpg";
+import bg1 from "../../assets/images/ensemble_bg.jpg";
+import bg2 from "../../assets/images/ensemble_bg2.jpg";
+import bg3 from "../../assets/images/ensemble_bg3.jpg";
+import bg4 from "../../assets/images/ensemble_bg4.jpg";
 
 export default function HeroSection() {
   const navigate = useNavigate();

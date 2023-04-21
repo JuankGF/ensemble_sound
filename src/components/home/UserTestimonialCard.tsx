@@ -22,7 +22,7 @@ export default function UserTestimonialCard({
         <Col>
           <Card.Subtitle className="d-grid">
             <b className="text-primary">{author}</b>
-            <p className="text-muted">
+            <p className="text-secondary">
               <small>{user}</small>
             </p>
           </Card.Subtitle>

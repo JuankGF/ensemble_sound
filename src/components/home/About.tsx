@@ -16,12 +16,12 @@ export default function About() {
     >
       <Container className="position-relative">
         <img
-          src={require("../../assets/session.jpeg")}
+          src={require("../../assets/images/session.jpeg")}
           alt="restaurant-hero-1"
           className="shadow-md rounded-sm on-bottom banner-img"
         />
         <img
-          src={require("../../assets/session2.jpg")}
+          src={require("../../assets/images/session2.jpg")}
           alt="restaurant-hero-2"
           className="shadow-md rounded-sm on-top banner-img"
         />

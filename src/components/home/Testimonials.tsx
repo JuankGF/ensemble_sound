@@ -6,7 +6,7 @@ import UserTestimonialCard from "./UserTestimonialCard";
 
 export default function Testimonials() {
   return (
-    <Container className="center-container bg-secondary_light section">
+    <Container className="center-container bg-primary section">
       <Row className="py-4 text-center">
         <h2 className="text-white">Testimonials</h2>
       </Row>
