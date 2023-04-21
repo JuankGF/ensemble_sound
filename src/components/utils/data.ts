@@ -12,14 +12,23 @@ export type Testimonial = {
   userImage: string;
 };
 
-export type Event = {
+export type Service = {
   id: string;
   image: string;
   name: string;
   description: string;
-  date?: Interval;
   price?: number;
   categories?: string[];
+};
+
+export type Event = {
+  id: string;
+  name: string;
+  location: string;
+  date: string;
+  address?: string;
+  description?: string;
+  image?: string;
 };
 
 export type Equipment = {
@@ -124,7 +133,7 @@ const serviceList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.",
     categories: ["specials"],
   },
-] as Event[];
+] as Service[];
 
 const testimonials = [
   {
@@ -301,7 +310,6 @@ const techRider: Equipment[] = [
     type: "sub",
     description: "Powered Sub",
   },
-
   {
     id: "6",
     image: "",
@@ -312,4 +320,26 @@ const techRider: Equipment[] = [
   },
 ];
 
-export { serviceList, testimonials, defBookingTimes, findService, techRider };
+const upcomingEvents: Event[] = [
+  {
+    id: "1",
+    name: "The Venue Concert",
+    location: "The Venue Parking Lot",
+    date: "2023-04-24T20:00",
+  },
+  {
+    id: "2",
+    name: "Papito's Show",
+    location: "Miromar Parking Lot",
+    date: "2023-04-28T20:00",
+  },
+];
+
+export {
+  serviceList,
+  testimonials,
+  defBookingTimes,
+  findService,
+  techRider,
+  upcomingEvents,
+};
