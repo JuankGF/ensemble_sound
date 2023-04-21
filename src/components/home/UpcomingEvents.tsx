@@ -38,7 +38,8 @@ export default function UpcomingEvents() {
                       icon={faCalendarDay}
                       className="text-primary"
                     />{" "}
-                    {shortDate}
+                    <span className="text-secondary">{shortDate}</span>
+                    <p className="overflow-hidden text-ellipsis">{name}</p>
                   </Col>
                   <Col className="align-self-center">
                     <FontAwesomeIcon
