@@ -153,15 +153,16 @@ export default function BookingForm() {
             error={errors.description}
             touched={touched.description}
           />
-
-          <Button
-            type="submit"
-            disabled={isSubmitting || !isValid}
-            className="mt-5"
-            aria-label="On Click"
-          >
-            Submit
-          </Button>
+          <div className="d-flex justify-content-center">
+            <Button
+              type="submit"
+              disabled={isSubmitting || !isValid}
+              className="mt-5"
+              aria-label="On Click"
+            >
+              Submit
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>
