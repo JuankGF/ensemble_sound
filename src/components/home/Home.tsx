@@ -5,6 +5,7 @@ import ServiceGrid from "./ServiceGrid";
 import Testimonials from "./Testimonials";
 import HeroSection from "../utils/HeroSection";
 import TechRider from "./TechRider";
+import UpcomingEvents from "./UpcomingEvents";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Testimonials />
       <About />
       <TechRider />
+      <UpcomingEvents />
     </>
   );
 }

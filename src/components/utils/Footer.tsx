@@ -11,15 +11,17 @@ export default function Footer() {
   return (
     <footer className="pt-3 px-5 d-flex align-items-center">
       <Row className="g-3 w-100">
-        <Col xs={5} md={4} className="position-relative m-auto">
-          <Image
-            src={logo}
-            width="100rem"
-            className="shadow-sm object-fit-cover"
-            title="©EnsembleSound"
-            alt="©EnsembleSound"
-          />
-          <div className="text-muted">©EnsembleSound 2023</div>
+        <Col xs={12} md={4} className="position-relative text-center">
+          {!isMobile && (
+            <Image
+              src={logo}
+              width="100rem"
+              className="shadow-sm object-fit-cover"
+              title="©EnsembleSound"
+              alt="©EnsembleSound"
+            />
+          )}
+          <div className="text-muted text-nowrap">©EnsembleSound 2023</div>
         </Col>
 
         <Col>
