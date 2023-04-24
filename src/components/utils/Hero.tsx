@@ -6,8 +6,8 @@ import { Button } from "react-bootstrap";
 
 type HeroProps = {
   text: string;
-  text_class?: string;
   title_class?: string;
+  text_class?: string;
   button_variant?: "primary" | "secondary";
   className?: string;
   id?: string;

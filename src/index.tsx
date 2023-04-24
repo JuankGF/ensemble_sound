@@ -9,8 +9,11 @@ import App from "./App";
 import Home from "./components/home/Home";
 import BookEvent from "./components/book/BookEvent";
 import BookSucces from "./components/book/BookSucces";
-import Services from "./components/shop-online/Services";
-import Cart from "./components/shop-online/Cart";
+import Services from "./components/book/Services";
+import BookSession from "./components/book/BookSession";
+import BookService, {
+  loader as serviceLoader,
+} from "./components/book/BookService";
 
 const router = createBrowserRouter([
   {
@@ -23,18 +26,22 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/services",
-        element: <Services />,
-      },
-      {
-        path: "/services",
-        element: <Cart />,
-      },
-      {
         path: "/book_online",
         element: <BookEvent />,
+        children: [
+          { index: true, element: <BookSession /> },
+          {
+            path: "/book_online/services",
+            element: <Services />,
+          },
+          {
+            path: "/book_online/service/:serviceId",
+            loader: serviceLoader,
+            element: <BookService />,
+          },
+          { path: "/book_online/book_success", element: <BookSucces /> },
+        ],
       },
-      { path: "/book_online/book_success", element: <BookSucces /> },
       {
         path: "/login",
         element: <h1>ToDo</h1>,

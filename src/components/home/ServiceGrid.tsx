@@ -13,7 +13,10 @@ export default function ServiceGrid() {
           <h2 className="text-primary">Services</h2>
         </Col>
         <Col xs={5} md={3} lg={2} className="d-flex justify-content-end">
-          <Button className="rounded-sm" onClick={() => navigate("/services")}>
+          <Button
+            className="rounded-sm"
+            onClick={() => navigate("/book_online/services")}
+          >
             Book Online
           </Button>
         </Col>
@@ -26,6 +29,8 @@ export default function ServiceGrid() {
               image={service.image}
               name={service.name}
               description={service.description}
+              estimated_duration={service.estimated_duration}
+              categories={service.categories}
               actionLabel="Book session"
               actionIcon={faBookmark}
             />

@@ -7,33 +7,40 @@ import Field from "../utils/Field";
 import BookingTimesPicker from "./BookingTimesPicker";
 
 const BookingSchema = Yup.object().shape({
-  name: Yup.string().required(),
-  email: Yup.string().email().required(),
+  name: Yup.string().required("Name is a required field"),
+  email: Yup.string().email().required("Email is a required field"),
   phone: Yup.string().optional(),
-  booking_date: Yup.string().required(),
-  arrival_time: Yup.string().required(),
-  dinners: Yup.number()
-    .required()
-    .min(1)
-    .max(80, "Sorry, 80 is our full capacity."),
-  occasion: Yup.string()
+  booking_date: Yup.string().required("Booking date is a required field"),
+  arrival_time: Yup.string().required("Time is a required field"),
+  type: Yup.string()
     .optional()
-    .oneOf(["anniversary", "birthday", "engagement"]),
-  restaurant_area: Yup.string().required().oneOf(["inside", "outside"]),
+    .oneOf([
+      "anniversary",
+      "birthday",
+      "engagement",
+      "live-event",
+      "rental",
+      "studio",
+      "sound-test",
+    ]),
+  description: Yup.string().required("Description is a required field"),
 });
 
-const initialValues = {
+const values = {
   email: "",
   name: "",
   phone: "",
   booking_date: "",
   arrival_time: "",
-  dinners: 1,
-  occasion: "",
-  restaurant_area: "outside",
+  type: "",
+  description: "",
 };
 
-export default function BookingForm() {
+type FormProps = {
+  initialValues?: typeof values;
+};
+
+export default function BookingForm({ initialValues = values }: FormProps) {
   const currentDate = new Date();
   const navigate = useNavigate();
 
@@ -45,7 +52,7 @@ export default function BookingForm() {
         setTimeout(() => {
           console.log(JSON.stringify(values, null, 2));
           setSubmitting(false);
-          navigate("/book_online/book-success");
+          navigate("/book_online/book_success");
         }, 400);
       }}
     >
@@ -128,67 +135,50 @@ export default function BookingForm() {
             }
           />
           <Field
-            type="number"
-            placeholder="Enter number of dinners"
-            field="dinners"
-            label="Number of dinners"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.dinners}
-            className="mb-3"
-            error={errors.dinners}
-            touched={touched.dinners}
-            required
-          />
-          <Field
             type="select"
-            placeholder="Enter occasion"
-            field="occasion"
-            label="Occasion"
+            placeholder="Enter event type"
+            field="type"
+            label="Event type"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.occasion}
+            value={values.type}
             className="mb-3"
-            error={errors.occasion}
-            touched={touched.occasion}
+            error={errors.type}
+            touched={touched.type}
+            disabled={initialValues.type !== ""}
             options={[
-              { name: "Occasion", value: "" },
+              { name: "Type", value: "" },
               { name: "Anniversary", value: "anniversary" },
               { name: "Birthday", value: "birthday" },
               { name: "Engagement", value: "engagement" },
+              { name: "Live Event", value: "live-event" },
+              { name: "Equipment Rental", value: "rental" },
+              { name: "Studio", value: "studio" },
+              { name: "Sound Test", value: "sound-test" },
             ]}
           />
-          <Form.Group controlId="restaurant_area">
-            <Form.Check
-              label="Outside"
-              name="restaurant_area"
-              type="radio"
-              id="outside"
-              value="outside"
-              defaultChecked={values.restaurant_area === "outside"}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            <Form.Check
-              label="Inside"
-              name="restaurant_area"
-              type="radio"
-              id="inside"
-              value="inside"
-              defaultChecked={values.restaurant_area === "inside"}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-          </Form.Group>
-
-          <Button
-            type="submit"
-            disabled={isSubmitting || !isValid}
-            className="mt-5"
-            aria-label="On Click"
-          >
-            Submit
-          </Button>
+          <Field
+            as="textarea"
+            placeholder="Enter description"
+            field="description"
+            label="Description"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.description}
+            className="mb-3"
+            error={errors.description}
+            touched={touched.description}
+          />
+          <div className="d-flex justify-content-center">
+            <Button
+              type="submit"
+              disabled={isSubmitting || !isValid}
+              className="mt-5"
+              aria-label="On Click"
+            >
+              Submit
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>
