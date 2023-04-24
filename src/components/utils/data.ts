@@ -32,6 +32,7 @@ export type Event = {
   address?: string;
   description?: string;
   image?: string;
+  type?: string;
 };
 
 export type Equipment = {
