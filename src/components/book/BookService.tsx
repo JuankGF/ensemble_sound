@@ -1,6 +1,7 @@
 import BookingForm from "./BookingForm";
 import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import { Service, findService } from "../utils/data";
+import { Container } from "react-bootstrap";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const service = await findService(params.serviceId!);
@@ -20,5 +21,9 @@ export default function BookService() {
     description: "",
   };
 
-  return <BookingForm initialValues={formInitialValues} />;
+  return (
+    <Container className="center-container px-6">
+      <BookingForm initialValues={formInitialValues} />
+    </Container>
+  );
 }

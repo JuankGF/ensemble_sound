@@ -7,11 +7,11 @@ import Field from "../utils/Field";
 import BookingTimesPicker from "./BookingTimesPicker";
 
 const BookingSchema = Yup.object().shape({
-  name: Yup.string().required(),
-  email: Yup.string().email().required(),
+  name: Yup.string().required("Name is a required field"),
+  email: Yup.string().email().required("Email is a required field"),
   phone: Yup.string().optional(),
-  booking_date: Yup.string().required(),
-  arrival_time: Yup.string().required(),
+  booking_date: Yup.string().required("Booking date is a required field"),
+  arrival_time: Yup.string().required("Time is a required field"),
   type: Yup.string()
     .optional()
     .oneOf([
@@ -23,7 +23,7 @@ const BookingSchema = Yup.object().shape({
       "studio",
       "sound-test",
     ]),
-  description: Yup.string().required(),
+  description: Yup.string().required("Description is a required field"),
 });
 
 const values = {
