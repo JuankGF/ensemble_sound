@@ -1,5 +1,5 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
@@ -39,22 +39,6 @@ export default function ServiceCard({
               <Card.Text className="text-muted card-text-chunk">
                 <small>{description}</small>
               </Card.Text>
-              {price && (
-                <div>
-                  <small className="text-secondary">
-                    <b>${price}</b>
-                  </small>
-                  {addToCart && (
-                    <Button
-                      variant="text"
-                      className="text-secondary mx-1"
-                      onClick={addToCart}
-                    >
-                      Add to cart <FontAwesomeIcon icon={faShoppingCart} />
-                    </Button>
-                  )}
-                </div>
-              )}
             </Col>
 
             <Col xs={6} md={5} lg={4} xl={3} className="overflow-hidden">
@@ -71,24 +55,43 @@ export default function ServiceCard({
             <Card.Text className="text-muted">
               <small>{description}</small>
             </Card.Text>
+          </>
+        )}
+      </Card.Body>
+      <Card.Footer className="d-flex w-100 justify-content-end bg-transparent border-top-0">
+        {layoutHorizontal ? (
+          price && (
+            <div className="d-flex align-items-center justify-content-between w-100">
+              <small className="text-secondary">
+                From <b>${price}</b>
+              </small>
+              {addToCart && (
+                <Button
+                  variant="text"
+                  className="text-secondary mx-1"
+                  onClick={addToCart}
+                >
+                  Book now <FontAwesomeIcon icon={faBookmark} />
+                </Button>
+              )}
+            </div>
+          )
+        ) : (
+          <>
             {price && (
               <small className="text-secondary">
                 <b>${price}</b>
               </small>
             )}
             {actionLabel && actionIcon && (
-              <Button
-                variant="text"
-                className="text-primary rounded-sm"
-                style={{ placeSelf: "end" }}
-              >
+              <Button variant="text" className="text-primary rounded-sm">
                 {actionLabel}{" "}
                 {actionIcon && <FontAwesomeIcon icon={actionIcon} />}
               </Button>
             )}
           </>
         )}
-      </Card.Body>
+      </Card.Footer>
     </Card>
   );
 }

@@ -40,9 +40,9 @@ export default function Navbar({ className, linkClassName }: NavbarProps) {
       <li>
         <Link
           className={`app-link ${linkClassName ?? ""} ${
-            isActive("/services") ? "active" : ""
+            isActive("/book_online/services") ? "active" : ""
           }`}
-          to={"/services"}
+          to={"/book_online/services"}
         >
           Services
         </Link>
