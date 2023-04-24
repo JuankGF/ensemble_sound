@@ -5,11 +5,11 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 
 import { Service } from "../utils/data";
 
-type DishCardProps = {
+type CardProps = {
   actionLabel?: string;
   actionIcon?: IconDefinition;
   layoutHorizontal?: boolean;
-  addToCart?: () => void;
+  callToAction?: () => void;
 } & Service;
 
 export default function ServiceCard({
@@ -21,8 +21,8 @@ export default function ServiceCard({
   actionIcon,
   layoutHorizontal,
   price,
-  addToCart,
-}: DishCardProps) {
+  callToAction,
+}: CardProps) {
   return (
     <Card className="shadow-sm h-100">
       {!layoutHorizontal && (
@@ -65,11 +65,11 @@ export default function ServiceCard({
               <small className="text-secondary">
                 From <b>${price}</b>
               </small>
-              {addToCart && (
+              {callToAction && (
                 <Button
                   variant="text"
                   className="text-secondary mx-1"
-                  onClick={addToCart}
+                  onClick={callToAction}
                 >
                   Book now <FontAwesomeIcon icon={faBookmark} />
                 </Button>
