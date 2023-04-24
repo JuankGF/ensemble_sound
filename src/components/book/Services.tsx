@@ -3,8 +3,8 @@ import { Badge, Col, Container, Row } from "react-bootstrap";
 
 import { serviceList } from "../utils/data";
 import ServiceCard from "../home/ServiceCard";
-import { CartContext } from "../../context/CartContext";
 import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const filters = ["studio", "live-event", "sound-test", "rental"];
 const hasCategory = (filters: string[], itemCategories: string[]) => {
@@ -17,7 +17,7 @@ const hasCategory = (filters: string[], itemCategories: string[]) => {
 };
 
 export default function Services() {
-  const cart = useContext(CartContext);
+  const navigate = useNavigate();
   const userCtx = useContext(UserContext);
   const [activeFilters, setActiveFilters] = useState([] as string[]);
 
@@ -73,13 +73,8 @@ export default function Services() {
                   estimated_duration={service.estimated_duration}
                   categories={service.categories}
                   layoutHorizontal
-                  addToCart={() =>
-                    cart?.addToCart({
-                      customerId: userCtx.userId,
-                      serviceId: service.id,
-                      qty: 1,
-                      price: 0,
-                    })
+                  callToAction={() =>
+                    navigate(`/book_online/service/${service.id}`)
                   }
                 />
               </Col>
