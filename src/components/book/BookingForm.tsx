@@ -14,11 +14,19 @@ const BookingSchema = Yup.object().shape({
   arrival_time: Yup.string().required(),
   type: Yup.string()
     .optional()
-    .oneOf(["anniversary", "birthday", "engagement", "concert"]),
+    .oneOf([
+      "anniversary",
+      "birthday",
+      "engagement",
+      "live-event",
+      "rental",
+      "studio",
+      "sound-test",
+    ]),
   description: Yup.string().required(),
 });
 
-const initialValues = {
+const values = {
   email: "",
   name: "",
   phone: "",
@@ -28,7 +36,11 @@ const initialValues = {
   description: "",
 };
 
-export default function BookingForm() {
+type FormProps = {
+  initialValues?: typeof values;
+};
+
+export default function BookingForm({ initialValues = values }: FormProps) {
   const currentDate = new Date();
   const navigate = useNavigate();
 
@@ -133,12 +145,16 @@ export default function BookingForm() {
             className="mb-3"
             error={errors.type}
             touched={touched.type}
+            disabled={initialValues.type !== ""}
             options={[
-              { name: "Occasion", value: "" },
+              { name: "Type", value: "" },
               { name: "Anniversary", value: "anniversary" },
               { name: "Birthday", value: "birthday" },
               { name: "Engagement", value: "engagement" },
-              { name: "Concert", value: "concert" },
+              { name: "Live Event", value: "live-event" },
+              { name: "Equipment Rental", value: "rental" },
+              { name: "Studio", value: "studio" },
+              { name: "Sound Test", value: "sound-test" },
             ]}
           />
           <Field
