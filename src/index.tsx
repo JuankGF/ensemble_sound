@@ -11,6 +11,9 @@ import BookEvent from "./components/book/BookEvent";
 import BookSucces from "./components/book/BookSucces";
 import Services from "./components/book/Services";
 import BookSession from "./components/book/BookSession";
+import BookService, {
+  loader as serviceLoader,
+} from "./components/book/BookService";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,11 @@ const router = createBrowserRouter([
           {
             path: "/book_online/services",
             element: <Services />,
+          },
+          {
+            path: "/book_online/service/:serviceId",
+            loader: serviceLoader,
+            element: <BookService />,
           },
           { path: "/book_online/book_success", element: <BookSucces /> },
         ],
