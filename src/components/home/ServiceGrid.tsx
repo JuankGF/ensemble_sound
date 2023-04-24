@@ -30,6 +30,7 @@ export default function ServiceGrid() {
               name={service.name}
               description={service.description}
               estimated_duration={service.estimated_duration}
+              categories={service.categories}
               actionLabel="Book session"
               actionIcon={faBookmark}
             />

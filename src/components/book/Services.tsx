@@ -71,6 +71,7 @@ export default function Services() {
                   description={service.description}
                   price={service.price}
                   estimated_duration={service.estimated_duration}
+                  categories={service.categories}
                   layoutHorizontal
                   addToCart={() =>
                     cart?.addToCart({

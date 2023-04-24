@@ -12,6 +12,8 @@ export type Testimonial = {
   userImage: string;
 };
 
+export type ServiceType = "live-event" | "rental" | "studio" | "sound-test";
+
 export type Service = {
   id: string;
   image: string;
@@ -19,7 +21,7 @@ export type Service = {
   description: string;
   estimated_duration: number; //in minutes
   price?: number;
-  categories?: string[];
+  categories: ServiceType[];
 };
 
 export type Event = {
